@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+        <input type="file" ID="fileSelect" />
+    </div>
+    <div class="main-container">
+      <button onclick="show('Bert Model')">Bert Model</button>
+      <button onclick="show('XGB-Classifier')">XGB-Classifier</button>
+      <button onclick="show('Decision Tree Classifier')">Decision Tree Classifier</button>
+      <button onclick="show('URL_Trigger')">URL_Trigger</button>
+      <button onclick="show('Button 5')">Button 5</button>
+    </div>
+    <div class="main-container table-container">
+        <table>
+            <tr>
+                <th></th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-score</th>
+                <th>Support</th>
+            </tr>
+            <tr>
+                <td id="h-0"></td>
+                <td id="h-1"></td>
+                <td id="h-2"></td>
+                <td id="h-3"></td>
+                <td id="h-4"></td>
+            </tr>
+            <tr>
+                <td id="l-0"></td>
+                <td id="l-1"></td>
+                <td id="l-2"></td>
+                <td id="l-3"></td>
+                <td id="l-4"></td>
+            </tr>
+            <tr>
+                <td id="me-0"></td>
+                <td id="me-1"></td>
+                <td id="me-2"></td>
+                <td id="me-3"></td>
+                <td id="me-4"></td>
+            </tr>
+            <tr>
+                <td id="my-0"></td>
+                <td id="my-1"></td>
+                <td id="my-2"></td>
+                <td id="my-3"></td>
+                <td id="my-4"></td>
+            </tr>
+            <tr>
+                <td>Accuracy</td>
+                <td id="a-1"></td>
+                <td id="a-2"></td>
+                <td id="a-3"></td>
+                <td id="a-4"></td>
+            </tr>
+            <tr>
+                <td>Macro avg</td>
+                <td id="ma-1"></td>
+                <td id="ma-2"></td>
+                <td id="ma-3"></td>
+                <td id="ma-4"></td>
+            </tr>
+            <tr>
+                <td>Weighted avg</td>
+                <td id="w-1"></td>
+                <td id="w-2"></td>
+                <td id="w-3"></td>
+                <td id="w-4"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-container span-con">
+        Fig: <span id="notification"></span>
+    </div>
+  </body>
+  <script>
+    var notification = document.getElementById('notification');
+
+    function show(message) {
+        notification.innerHTML=message
+        if (message =="Bert Model"){
+            document.getElementById('h-0').innerHTML= "High"
+            document.getElementById('l-0').innerHTML= "Low"
+            document.getElementById('me-0').innerHTML= "Medium"
+            document.getElementById('my-0').innerHTML= " "
+            document.getElementById('h-1').innerHTML= 0.58
+            document.getElementById('h-2').innerHTML= 0.92
+            document.getElementById('h-3').innerHTML= 0.71
+            document.getElementById('h-4').innerHTML= 124
+            document.getElementById('l-1').innerHTML= 0.99
+            document.getElementById('l-2').innerHTML= 0.48
+            document.getElementById('l-3').innerHTML= 0.65
+            document.getElementById('l-4').innerHTML= 1572
+            document.getElementById('me-1').innerHTML= 0.88
+            document.getElementById('me-2').innerHTML= 0.99
+            document.getElementById('me-3').innerHTML= 0.93
+            document.getElementById('me-4').innerHTML= 6304
+            document.getElementById('my-1').innerHTML= " "
+            document.getElementById('my-2').innerHTML= " "
+            document.getElementById('my-3').innerHTML= " "
+            document.getElementById('my-4').innerHTML= " "
+            document.getElementById('a-1').innerHTML= " "
+            document.getElementById('a-2').innerHTML= " "
+            document.getElementById('a-3').innerHTML= 0.89
+            document.getElementById('a-4').innerHTML= 8000
+            document.getElementById('ma-1').innerHTML= 0.82
+            document.getElementById('ma-2').innerHTML= 0.80
+            document.getElementById('ma-3').innerHTML= 0.76
+            document.getElementById('ma-4').innerHTML= 8000
+            document.getElementById('w-1').innerHTML= 0.90
+            document.getElementById('w-2').innerHTML= 0.89
+            document.getElementById('w-3').innerHTML= 0.87
+            document.getElementById('w-4').innerHTML= 8000
+           
+        } else if (message =="XGB-Classifier"){
+            document.getElementById('h-0').innerHTML= 0
+            document.getElementById('h-1').innerHTML= 0.97
+            document.getElementById('h-2').innerHTML= 0.99
+            document.getElementById('h-3').innerHTML= 0.98
+            document.getElementById('h-4').innerHTML= 85621
+            document.getElementById('l-0').innerHTML= 1
+            document.getElementById('l-1').innerHTML= 0.97
+            document.getElementById('l-2').innerHTML= 0.99
+            document.getElementById('l-3').innerHTML= 0.98
+            document.getElementById('l-4').innerHTML= 19292
+            document.getElementById('me-0').innerHTML= 2
+            document.getElementById('me-1').innerHTML= 0.97
+            document.getElementById('me-2').innerHTML= 0.91
+            document.getElementById('me-3').innerHTML= 0.94
+            document.getElementById('me-4').innerHTML= 6504
+            document.getElementById('my-0').innerHTML= 3
+            document.getElementById('my-1').innerHTML= 0.91
+            document.getElementById('my-2').innerHTML= 0.82
+            document.getElementById('my-3').innerHTML= 0.86
+            document.getElementById('my-4').innerHTML= 18822
+            document.getElementById('a-1').innerHTML= " "
+            document.getElementById('a-2').innerHTML= " "
+            document.getElementById('a-3').innerHTML= 0.96
+            document.getElementById('a-4').innerHTML= 130239
+            document.getElementById('ma-1').innerHTML= 0.95
+            document.getElementById('ma-2').innerHTML= 0.93
+            document.getElementById('ma-3').innerHTML= 0.94
+            document.getElementById('ma-4').innerHTML= 130239
+            document.getElementById('w-1').innerHTML= 0.96
+            document.getElementById('w-2').innerHTML= 0.96
+            document.getElementById('w-3').innerHTML= 0.96
+            document.getElementById('w-4').innerHTML= 130239
+           
+        } else if (message =="Decision Tree Classifier"){
+            document.getElementById('h-0').innerHTML= 0
+            document.getElementById('h-1').innerHTML= 0.97
+            document.getElementById('h-2').innerHTML= 0.98
+            document.getElementById('h-3').innerHTML= 0.97
+            document.getElementById('h-4').innerHTML= 85621
+            document.getElementById('l-0').innerHTML= 1
+            document.getElementById('l-1').innerHTML= 0.98
+            document.getElementById('l-2').innerHTML= 0.98
+            document.getElementById('l-3').innerHTML= 0.98
+            document.getElementById('l-4').innerHTML= 19292
+            document.getElementById('me-0').innerHTML= 2
+            document.getElementById('me-1').innerHTML= 0.95
+            document.getElementById('me-2').innerHTML= 0.94
+            document.getElementById('me-3').innerHTML= 0.95
+            document.getElementById('me-4').innerHTML= 6504
+            document.getElementById('my-0').innerHTML= 3
+            document.getElementById('my-1').innerHTML= 0.87
+            document.getElementById('my-2').innerHTML= 0.83
+            document.getElementById('my-3').innerHTML= 0.85
+            document.getElementById('my-4').innerHTML= 18822
+            document.getElementById('a-1').innerHTML= " "
+            document.getElementById('a-2').innerHTML= " "
+            document.getElementById('a-3').innerHTML= 0.96
+            document.getElementById('a-4').innerHTML= 130239
+            document.getElementById('ma-1').innerHTML= 0.94
+            document.getElementById('ma-2').innerHTML= 0.93
+            document.getElementById('ma-3').innerHTML= 0.94
+            document.getElementById('ma-4').innerHTML= 130239
+            document.getElementById('w-1').innerHTML= 0.95
+            document.getElementById('w-2').innerHTML= 0.96
+            document.getElementById('w-3').innerHTML= 0.95
+            document.getElementById('w-4').innerHTML= 130239
+        } else if (message =="URL_Trigger"){
+            document.getElementById('h-0').innerHTML= "bengin"
+            document.getElementById('h-1').innerHTML= 0.88
+            document.getElementById('h-2').innerHTML= 0.93
+            document.getElementById('h-3').innerHTML= 0.90
+            document.getElementById('h-4').innerHTML= 428103
+            document.getElementById('l-0').innerHTML= "defacement"
+            document.getElementById('l-1').innerHTML= 0.00
+            document.getElementById('l-2').innerHTML= 0.00
+            document.getElementById('l-3').innerHTML= 0.00
+            document.getElementById('l-4').innerHTML= 96457
+            document.getElementById('me-0').innerHTML= "malware"
+            document.getElementById('me-1').innerHTML= 0.05
+            document.getElementById('me-2').innerHTML= 0.15
+            document.getElementById('me-3').innerHTML= 0.07
+            document.getElementById('me-4').innerHTML= 32520
+            document.getElementById('my-0').innerHTML= "phishing"
+            document.getElementById('my-1').innerHTML= 0.02
+            document.getElementById('my-2').innerHTML= 0.00
+            document.getElementById('my-3').innerHTML= 0.01
+            document.getElementById('my-4').innerHTML= 94111
+            document.getElementById('a-1').innerHTML= " "
+            document.getElementById('a-2').innerHTML= " "
+            document.getElementById('a-3').innerHTML= 0.62
+            document.getElementById('a-4').innerHTML= 651191
+            document.getElementById('ma-1').innerHTML= 0.24
+            document.getElementById('ma-2').innerHTML= 0.27
+            document.getElementById('ma-3').innerHTML= 0.25
+            document.getElementById('ma-4').innerHTML= 651191
+            document.getElementById('w-1').innerHTML= 0.59
+            document.getElementById('w-2').innerHTML= 0.62
+            document.getElementById('w-3').innerHTML= 0.60
+            document.getElementById('w-4').innerHTML= 651191
+        }
+    }
+</script>
+</html>

@@ -15,7 +15,8 @@
       <button onclick="show('XGB-Classifier')">XGB-Classifier</button>
       <button onclick="show('Decision Tree Classifier')">Decision Tree Classifier</button>
       <button onclick="show('URL_Trigger')">URL_Trigger</button>
-      <button onclick="show('RNN_Unidirectional LTSM')">RNN_Unidirectional LTSM</button>
+      <button onclick="show('RNN_Unidirectional LTSM')">RNN_Uni</button>
+      <button onclick="show('RNN_Bidirectional LTSM')">RNN_Bi</button>
     </div>
     <div class="main-container table-container">
         <table>
@@ -252,6 +253,39 @@
             document.getElementById('w-1').innerHTML= 0.60
             document.getElementById('w-2').innerHTML= 0.62
             document.getElementById('w-3').innerHTML= 0.61
+            document.getElementById('w-4').innerHTML= 651191
+        } else if (message =="RNN_Bidirectional LTSM"){
+            document.getElementById('h-0').innerHTML= "benign"
+            document.getElementById('h-1').innerHTML= 0.63
+            document.getElementById('h-2').innerHTML= 0.00
+            document.getElementById('h-3').innerHTML= 0.00
+            document.getElementById('h-4').innerHTML= 428103
+            document.getElementById('l-0').innerHTML= "defacement"
+            document.getElementById('l-1').innerHTML= 0.15
+            document.getElementById('l-2').innerHTML= 1.00
+            document.getElementById('l-3').innerHTML= 0.26
+            document.getElementById('l-4').innerHTML= 96457
+            document.getElementById('me-0').innerHTML= "malware"
+            document.getElementById('me-1').innerHTML= 0.01
+            document.getElementById('me-2').innerHTML= 0.00
+            document.getElementById('me-3').innerHTML= 0.00
+            document.getElementById('me-4').innerHTML= 32520
+            document.getElementById('my-0').innerHTML= "phishing"
+            document.getElementById('my-1').innerHTML= 0.13
+            document.getElementById('my-2').innerHTML= 0.00
+            document.getElementById('my-3').innerHTML= 0.00
+            document.getElementById('my-4').innerHTML= 94111
+            document.getElementById('a-1').innerHTML= " "
+            document.getElementById('a-2').innerHTML= " "
+            document.getElementById('a-3').innerHTML= 0.15
+            document.getElementById('a-4').innerHTML= 651191
+            document.getElementById('ma-1').innerHTML= 0.23
+            document.getElementById('ma-2').innerHTML= 0.25
+            document.getElementById('ma-3').innerHTML= 0.07
+            document.getElementById('ma-4').innerHTML= 651191
+            document.getElementById('w-1').innerHTML= 0.45
+            document.getElementById('w-2').innerHTML= 0.15
+            document.getElementById('w-3').innerHTML= 0.04
             document.getElementById('w-4').innerHTML= 651191
         }
     }
